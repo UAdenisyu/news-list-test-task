@@ -10,7 +10,6 @@ const NewsFeedList = () => {
 		(async () => {
 			const result = await getTopStories(9);
 			setStories(result);
-			console.log("NewsFeedList", result);
 		})()
 	}, [])
 

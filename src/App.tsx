@@ -4,6 +4,7 @@ import { NewsFeedList } from './components/NewsFeedList';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FindMore } from './components/FindMore';
+import { CommentForm } from './components/CommentForm';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <NewsFeedList/>
       <FindMore/>
+      <CommentForm/>
       <Footer/>
     </div>
   );

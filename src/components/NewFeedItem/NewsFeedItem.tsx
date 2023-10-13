@@ -4,7 +4,7 @@ import { StoryType } from '../../schemas/story';
 
 type PropsType = Pick<StoryType, 'title' | 'url'> & { firstItemInLine: boolean }
 
-const NewsFeedItem: FC<PropsType> = ({title = "The Interface of Kai Krause's Software", url="https://mprove.de/script/99/kai/", firstItemInLine}) => {
+const NewsFeedItem: FC<PropsType> = ({title, url, firstItemInLine}) => {
     return (
 		<div className={(firstItemInLine ? "bg-white shadow-lg " : "" ) + "w-[30%] h-[600px] flex flex-column my-4 flex-wrap"}>
 			<img src={picture} alt="#"/>
