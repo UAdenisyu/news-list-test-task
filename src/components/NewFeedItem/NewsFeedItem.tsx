@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import picture from '../../assets/People-silhouettes-binary-code-background-898966394_4500x3000.jpeg';
+import picture from '../../assets/Programmer-working-in-a-software-developing-company-office-665158684_5379x3586.jpeg';
 import { StoryType } from '../../schemas/story';
 
 type PropsType = Pick<StoryType, 'title' | 'url'> & { firstItemInLine: boolean }
