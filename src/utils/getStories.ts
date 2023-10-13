@@ -1,4 +1,6 @@
-export const getTopStories = async (amount: number) => {
+import { StoryType } from "../schemas/story";
+
+export const getTopStories = async (amount: number): Promise<StoryType[]> => {
     const url = "https://hacker-news.firebaseio.com/v0/topstories.json";
     try {
         const response = await fetch(url);
@@ -16,6 +18,6 @@ export const getTopStories = async (amount: number) => {
         const result = await Promise.all(promises);
         return result;
     } catch (err) {
-        console.error("Failed getting all stories", err);
+        throw new Error("Failed getting all stories" + err);
     }
 }

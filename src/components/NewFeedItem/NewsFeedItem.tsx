@@ -1,17 +1,23 @@
-const NewsFeedItem = () => {
+import { FC, memo } from 'react';
+import picture from '../../assets/People-silhouettes-binary-code-background-898966394_4500x3000.jpeg';
+import { StoryType } from '../../schemas/story';
+
+type PropsType = Pick<StoryType, 'title' | 'url'> & { firstItemInLine: boolean }
+
+const NewsFeedItem: FC<PropsType> = ({title = "The Interface of Kai Krause's Software", url="https://mprove.de/script/99/kai/", firstItemInLine}) => {
     return (
-		<div className="bg-gray-500">
-			<img src="assets/People-silhouettes-binary-code-background-898966394_4500x3000.jpeg" alt="#"/>
-			<div>
-				<h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus, nibh vel mollis mollis, elit arcu luctus est, a efficitur sapien nunc sed magna.</p>
-				<div>
-					<small>Tag 1</small>
-					<small>Tag 2</small>
+		<div className={(firstItemInLine ? "bg-white shadow-lg " : "" ) + "w-[30%] h-[600px] flex flex-column my-4 flex-wrap"}>
+			<img src={picture} alt="#"/>
+			<div className='p-4 flex flex-wrap'>
+				<h2 className='text-blue-400 text-xl'><a target="_blank" href={url} rel="noreferrer">{title}</a></h2>
+				<p className='my-4 flex align-bottom' >Lorem eiusmod adipisicing cillum fugiat velit deserunt est eu do eu do est. Laborum pariatur minim nulla reprehenderit. Deserunt in ad voluptate sint tempor cupidatat laborum aute minim ipsum occaecat sit in.</p>
+				<div className='mt-auto'>
+					<small className='bg-gray-400 py-1 px-2 text-white text-base'>Gaming</small>
+					<small className='bg-gray-400 py-1 px-2 text-white text-base ml-2'>Wow</small>
 				</div>
 			</div>
 		</div>
     );
 }
 
-export { NewsFeedItem };
+export default memo(NewsFeedItem);
